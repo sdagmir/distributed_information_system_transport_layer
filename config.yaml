@@ -1,0 +1,27 @@
+http:
+  host: "0.0.0.0"
+  port: 8090
+  read_timeout: "5s"
+  write_timeout: "5s"
+  max_header_bytes: 1048576
+
+http_client:
+  code_url: "http://localhost:8090/transport/transfer"
+  receive_url: "http://localhost:8090/receive"
+
+kafka:
+  producer:
+    brokers: ["localhost:29092"]
+    topic: "segmentation"
+    required_acks: -1
+    retry_max: 5
+    return_success: true
+  consumer:
+    brokers: ["localhost:29092"]
+    topic: "segmentation"
+    auto_offset_reset: "earliest"
+    return_errors: true
+
+segment:
+  max_size: 150
+  assembly_period: "2s"
