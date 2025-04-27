@@ -6,7 +6,7 @@ http:
   max_header_bytes: 1048576
 
 http_client:
-  code_url: "http://localhost:8090/transport/transfer"
+  code_url: "http://localhost:9000/code"
   receive_url: "http://localhost:8090/receive"
 
 kafka:
